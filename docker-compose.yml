@@ -2,12 +2,16 @@ version: "3"
 
 services:
   nodejs:
-    # fill out the configuration here
+    build: .
+    container_name: nodejs_app
+    restart: unless-stopped
+    expose:
+      - "8080"
+    volumes:
+      - ./:/usr/src/app
     networks:
       - app-network
 
-  # the nginx configuration is given below
-  # the website will run on localhost:80
   webserver:
     image: nginx:mainline-alpine
     container_name: webserver
@@ -27,7 +31,6 @@ volumes:
     driver: local
     driver_opts:
       type: none
-      # fill out your absolute path to your folder here
       device: /absolute/path/to/web/template/folder
       o: bind
 

@@ -2,7 +2,7 @@
 
 Have you:
 
-- [ ] added profile picture
+- [x] added profile picture
 - [ ] intro/bio
 - [ ] talked about a project (3x)
 - [ ] github profile
